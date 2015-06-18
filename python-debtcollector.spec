@@ -3,7 +3,7 @@
 
 Name:        python-debtcollector
 Version:     0.3.0
-Release:     3%{?dist}
+Release:     4%{?dist}
 Summary:     A collection of Python deprecation patterns and strategies
 
 License:     ASL 2.0
@@ -89,6 +89,9 @@ dos2unix doc/build/html/_static/jquery.js
 %doc LICENSE
 
 %changelog
+* Thu Jun 18 2015 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 0.3.0-4
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_23_Mass_Rebuild
+
 * Fri Mar 27 2015 Chandan Kumar <chkumar246@gmail.com> - 0.3.0-3
 - Fixed jquery doc issues
 
