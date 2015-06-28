@@ -1,5 +1,5 @@
 %{!?_licensedir:%global license %%doc}
-%global sname debtcollector
+%global pypi_name debtcollector
 
 Name:        python-debtcollector
 Version:     0.3.0
@@ -7,21 +7,17 @@ Release:     4%{?dist}
 Summary:     A collection of Python deprecation patterns and strategies
 
 License:     ASL 2.0
-URL:         https://pypi.python.org/pypi/debtcollector
-Source0:     https://pypi.python.org/packages/source/d/%{sname}/%{sname}-%{version}.tar.gz
+URL:         https://pypi.python.org/pypi/%{pypi_name}
+Source0:     https://pypi.python.org/packages/source/d/%{pypi_name}/%{pypi_name}-%{version}.tar.gz
 
 BuildArch:   noarch
 
 Requires:    python-setuptools
-Requires:    python-iso8601
+Requires:    python-babel
 Requires:    python-oslo-utils
+Requires:    python-pbr
 Requires:    python-six >= 1.9.0
 Requires:    python-wrapt
-Requires:    python-netaddr
-Requires:    python-oslo-i18n
-Requires:    python-netifaces
-Requires:    python-babel
-Requires:    pytz
 
 BuildRequires: python2-devel
 BuildRequires: python-setuptools
@@ -48,18 +44,10 @@ BuildRequires:  dos2unix
 Documentation for the debtcollector module
 
 %prep
-%setup -q -n %{sname}-%{version}
-
-# Remove bundled egg-info
-rm -rf %{sname}.egg-info
+%setup -q -n %{pypi_name}-%{version}
 
 # let RPM handle deps
-sed -i '/setup_requires/d; /install_requires/d; /dependency_links/d' setup.py
-
-# make doc build compatible with python-oslo-sphinx RPM
-sed -i 's/oslosphinx/oslo.sphinx/' doc/source/conf.py
-
-rm -rf {test-,}requirements.txt
+rm -rf requirements.txt
 
 %build
 %{__python2} setup.py build
@@ -81,12 +69,12 @@ dos2unix doc/build/html/_static/jquery.js
 %files
 %doc README.rst CONTRIBUTING.rst
 %license LICENSE
-%{python2_sitelib}/%{sname}
+%{python2_sitelib}/%{pypi_name}
 %{python2_sitelib}/*.egg-info
 
 %files doc
 %doc doc/build/html
-%doc LICENSE
+%license LICENSE
 
 %changelog
 * Thu Jun 18 2015 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 0.3.0-4
