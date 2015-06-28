@@ -2,13 +2,13 @@
 %global pypi_name debtcollector
 
 Name:        python-debtcollector
-Version:     0.3.0
-Release:     4%{?dist}
+Version:     XXX
+Release:     XXX
 Summary:     A collection of Python deprecation patterns and strategies
 
 License:     ASL 2.0
 URL:         https://pypi.python.org/pypi/%{pypi_name}
-Source0:     https://pypi.python.org/packages/source/d/%{pypi_name}/%{pypi_name}-%{version}.tar.gz
+Source0:     http://tarballs.openstack.org/%{pypi_name}/%{pypi_name}-master.tar.gz
 
 BuildArch:   noarch
 
@@ -44,7 +44,7 @@ BuildRequires:  dos2unix
 Documentation for the debtcollector module
 
 %prep
-%setup -q -n %{pypi_name}-%{version}
+%setup -q -n %{pypi_name}-%{upstream_version}
 
 # let RPM handle deps
 rm -rf requirements.txt
@@ -77,14 +77,3 @@ dos2unix doc/build/html/_static/jquery.js
 %license LICENSE
 
 %changelog
-* Thu Jun 18 2015 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 0.3.0-4
-- Rebuilt for https://fedoraproject.org/wiki/Fedora_23_Mass_Rebuild
-
-* Fri Mar 27 2015 Chandan Kumar <chkumar246@gmail.com> - 0.3.0-3
-- Fixed jquery doc issues
-
-* Wed Mar 25 2015 Chandan Kumar <chkumar246@gmail.com> - 0.3.0-2
-- Fixed doc and license macro in spec file
-
-* Tue Mar 10 2015 Chandan Kumar <chkumar246@gmail.com> - 0.3.0-1
-- Initial Package
