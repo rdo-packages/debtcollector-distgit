@@ -14,7 +14,6 @@ BuildArch:   noarch
 
 Requires:    python-setuptools
 Requires:    python-babel
-Requires:    python-oslo-utils
 Requires:    python-pbr
 Requires:    python-six >= 1.9.0
 Requires:    python-wrapt
@@ -36,7 +35,6 @@ Summary:        Documentation for the debtcollector module
 
 BuildRequires:  python-sphinx
 BuildRequires:  python-oslo-sphinx
-BuildRequires:  python-oslo-utils
 BuildRequires:  python-six >= 1.9.0
 BuildRequires:  dos2unix
 
