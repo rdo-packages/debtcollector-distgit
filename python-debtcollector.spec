@@ -2,7 +2,7 @@
 %global pypi_name debtcollector
 
 Name:        python-debtcollector
-Version:     0.5.0
+Version:     0.7.0
 Release:     1%{?dist}
 Summary:     A collection of Python deprecation patterns and strategies
 
@@ -14,13 +14,13 @@ BuildArch:   noarch
 
 Requires:    python-setuptools
 Requires:    python-babel
-Requires:    python-pbr
+Requires:    python-pbr >= 1.3.0
 Requires:    python-six >= 1.9.0
 Requires:    python-wrapt
 
 BuildRequires: python2-devel
 BuildRequires: python-setuptools
-BuildRequires: python-pbr
+BuildRequires: python-pbr >= 1.3.0
 
 %description
 It is a collection of functions/decorators which is used to signal a user when
@@ -75,6 +75,9 @@ dos2unix doc/build/html/_static/jquery.js
 %license LICENSE
 
 %changelog
+* Wed Aug 05 2015 Alan Pevec <alan.pevec@redhat.com> 0.7.0-1
+- Update to upstream 0.7.0
+
 * Sun Jun 28 2015 Alan Pevec <alan.pevec@redhat.com> 0.5.0-1
 - Update to upstream 0.5.0
 
