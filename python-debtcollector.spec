@@ -7,7 +7,7 @@
 
 Name:        python-debtcollector
 Version:     0.7.0
-Release:     2%{?dist}
+Release:     3%{?dist}
 Summary:     A collection of Python deprecation patterns and strategies
 
 License:     ASL 2.0
@@ -24,9 +24,13 @@ It is a collection of functions/decorators which is used to signal a user when
 * a keyword is renamed
 * further customizing the emitted messages
 
-%package -n python2-%{pypi_name}
+%package -n python2-debtcollector
 Summary:     A collection of Python deprecation patterns and strategies
 %{?python_provide:%python_provide python2-%{pypi_name}}
+# python_provide does not exist in CBS Cloud buildroot
+Provides:       python-debtcollector = %{version}-%{release}
+Obsoletes:      python-debtcollector < 0.7.0-3
+
 BuildRequires: python2-devel
 BuildRequires: python-setuptools
 BuildRequires: python-pbr
@@ -36,7 +40,7 @@ Requires:    python-pbr >= 1.3.0
 Requires:    python-six >= 1.9.0
 Requires:    python-wrapt
 
-%description -n python2-%{pypi_name}
+%description -n python2-debtcollector
 It is a collection of functions/decorators which is used to signal a user when
 *  a method (static method, class method, or regular instance method) or a class
     or function is going to be removed at some point in the future.
@@ -44,21 +48,25 @@ It is a collection of functions/decorators which is used to signal a user when
 * a keyword is renamed
 * further customizing the emitted messages
 
-%package -n python2-%{pypi_name}-doc
+%package -n python2-debtcollector-doc
 Summary:        Documentation for the debtcollector module
+%{?python_provide:%python_provide python2-%{pypi_name}-doc}
+# python_provide does not exist in CBS Cloud buildroot
+Provides:       python-debtcollector-doc = %{version}-%{release}
+Obsoletes:      python-debtcollector-doc < 0.7.0-3
 
 BuildRequires:  python-sphinx
 BuildRequires:  python-oslo-sphinx
 BuildRequires:  python-six >= 1.9.0
 BuildRequires:  dos2unix
 
-%description -n python2-%{pypi_name}-doc
+%description -n python2-debtcollector-doc
 Documentation for the debtcollector module
 
 %if 0%{?with_python3}
-%package -n python3-%{pypi_name}
+%package -n python3-debtcollector
 Summary:     A collection of Python deprecation patterns and strategies
-%{?python_provide:%python_provide python3-%{srcname}}
+%{?python_provide:%python_provide python3-%{pypi_name}}
 BuildRequires: python3-devel
 BuildRequires: python3-setuptools
 BuildRequires: python3-pbr
@@ -68,7 +76,7 @@ Requires:    python3-pbr
 Requires:    python3-six >= 1.9.0
 Requires:    python3-wrapt
 
-%description -n python3-%{pypi_name}
+%description -n python3-debtcollector
 It is a collection of functions/decorators which is used to signal a user when
 *  a method (static method, class method, or regular instance method) or a class
     or function is going to be removed at some point in the future.
@@ -78,15 +86,16 @@ It is a collection of functions/decorators which is used to signal a user when
 %endif
 
 %if 0%{?with_python3}
-%package -n python3-%{pypi_name}-doc
+%package -n python3-debtcollector-doc
 Summary:        Documentation for the debtcollector module
+%{?python_provide:%python_provide python3-%{pypi_name}-doc}
 
 BuildRequires:  python3-sphinx
 BuildRequires:  python3-oslo-sphinx
 BuildRequires:  python3-six >= 1.9.0
 BuildRequires:  dos2unix
 
-%description -n python3-%{pypi_name}-doc
+%description -n python3-debtcollector-doc
 Documentation for the debtcollector module
 %endif
 
@@ -125,30 +134,34 @@ dos2unix doc/build/html/_static/jquery.js
 %{__python3} setup.py install --skip-build --root %{buildroot}
 %endif
 
-%files -n python2-%{pypi_name}
+%files -n python2-debtcollector
 %doc README.rst CONTRIBUTING.rst
 %license LICENSE
 %{python2_sitelib}/%{pypi_name}
 %{python2_sitelib}/%{pypi_name}*.egg-info
 
-%files -n python2-%{pypi_name}-doc
+%files -n python2-debtcollector-doc
 %doc doc/build/html
 %license LICENSE
 
 %if 0%{?with_python3}
-%files -n python3-%{pypi_name}
+%files -n python3-debtcollector
 %license LICENSE
 %{python3_sitelib}/%{pypi_name}
 %{python3_sitelib}/%{pypi_name}*.egg-info
 %endif
 
 %if 0%{?with_python3}
-%files -n python3-%{pypi_name}-doc
+%files -n python3-debtcollector-doc
 %doc doc/build/html
 %license LICENSE
 %endif
 
 %changelog
+* Mon Sep 07 2015 Chandan Kumar <chkumar246@gmail.com> 0.7.0-3
+- Fixed obseletes
+- Fixed package namespaces
+
 * Wed Sep 02 2015 Chandan Kumar <chkumar246@gmail.com> 0.7.0-2
 - Added python 2 and python 3 subpackage
 
