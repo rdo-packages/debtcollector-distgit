@@ -6,8 +6,8 @@
 %endif
 
 Name:        python-debtcollector
-Version:     0.7.0
-Release:     3%{?dist}
+Version:     0.8.0
+Release:     1%{?dist}
 Summary:     A collection of Python deprecation patterns and strategies
 
 License:     ASL 2.0
@@ -158,6 +158,9 @@ dos2unix doc/build/html/_static/jquery.js
 %endif
 
 %changelog
+* Fri Sep 18 2015 Alan Pevec <alan.pevec@redhat.com> 0.8.0-1
+- Update to upstream 0.8.0
+
 * Mon Sep 07 2015 Chandan Kumar <chkumar246@gmail.com> 0.7.0-3
 - Fixed obseletes
 - Fixed package namespaces
