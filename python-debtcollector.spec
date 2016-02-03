@@ -29,15 +29,6 @@ Summary:     A collection of Python deprecation patterns and strategies
 BuildRequires: python2-devel
 BuildRequires: python-setuptools
 BuildRequires: python-pbr
-# test dependencies
-BuildRequires:   python-hacking
-BuildRequires:   python-coverage
-BuildRequires:   python-subunit
-BuildRequires:   python-oslotest
-BuildRequires:   python-testrepository
-BuildRequires:   python-testscenarios
-BuildRequires:   python-testtools
-BuildRequires:   python-fixtures
 
 Requires:    python-babel
 Requires:    python-pbr
@@ -87,15 +78,6 @@ Summary:     A collection of Python deprecation patterns and strategies
 BuildRequires: python3-devel
 BuildRequires: python3-setuptools
 BuildRequires: python3-pbr
-# test dependencies
-BuildRequires:   python3-hacking
-BuildRequires:   python3-coverage
-BuildRequires:   python3-subunit
-BuildRequires:   python3-oslotest
-BuildRequires:   python3-testrepository
-BuildRequires:   python3-testscenarios
-BuildRequires:   python3-testtools
-BuildRequires:   python3-fixtures
 
 Requires:    python3-babel
 Requires:    python3-pbr
@@ -137,15 +119,6 @@ rm -fr doc/build/html/.buildinfo
 
 %if 0%{?with_python3}
 %py3_install
-%endif
-
-%check
-# FIXME python-fixtures >= 1.3.1 is not available
-# Once it is available, remove || to pass the tests
-%{__python2} setup.py test ||
-%if 0%{?with_python3}
-rm -rf .testrepository
-%{__python3} setup.py test ||
 %endif
 
 %files -n python2-%{pypi_name}
