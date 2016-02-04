@@ -7,7 +7,7 @@
 
 Name:        python-debtcollector
 Version:     0.8.0
-Release:     2%{?dist}
+Release:     3%{?dist}
 Summary:     A collection of Python deprecation patterns and strategies
 
 License:     ASL 2.0
@@ -158,6 +158,9 @@ dos2unix doc/build/html/_static/jquery.js
 %endif
 
 %changelog
+* Thu Feb 04 2016 Fedora Release Engineering <releng@fedoraproject.org> - 0.8.0-3
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_24_Mass_Rebuild
+
 * Tue Nov 10 2015 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 0.8.0-2
 - Rebuilt for https://fedoraproject.org/wiki/Changes/python3.5
 
