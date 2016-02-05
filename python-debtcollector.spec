@@ -54,22 +54,6 @@ BuildRequires:  python-six
 %description -n python-%{pypi_name}-doc
 Documentation for the debtcollector module
 
-%package -n python-%{pypi_name}-tests
-Summary:   Test subpackage for the debtcollector module
-
-Requires:  python-%{pypi_name} = %{version}-%{release}
-Requires:   python-hacking
-Requires:   python-coverage
-Requires:   python-subunit
-Requires:   python-oslotest
-Requires:   python-testrepository
-Requires:   python-testscenarios
-Requires:   python-testtools
-Requires:   python-fixtures
-
-%description -n python-%{pypi_name}-tests
-Test subpackage for the debtcollector module
-
 %if 0%{?with_python3}
 %package -n python3-%{pypi_name}
 Summary:     A collection of Python deprecation patterns and strategies
@@ -140,8 +124,5 @@ rm -fr doc/build/html/.buildinfo
 %{python3_sitelib}/%{pypi_name}*.egg-info
 %exclude %{python2_sitelib}/%{pypi_name}/tests
 %endif
-
-%files -n python-%{pypi_name}-tests
-%{python2_sitelib}/%{pypi_name}/tests
 
 %changelog
