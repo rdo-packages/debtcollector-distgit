@@ -4,14 +4,16 @@
 %global with_python3 1
 %endif
 
+%{!?upstream_version: %global upstream_version %{version}%{?milestone}}
+
 Name:        python-%{pypi_name}
 Version:     1.3.0
-Release:     1
+Release:     1%{?dist}
 Summary:     A collection of Python deprecation patterns and strategies
 
 License:     ASL 2.0
 URL:         https://pypi.python.org/pypi/%{pypi_name}
-Source0:     http://tarballs.openstack.org/%{pypi_name}/%{pypi_name}-master.tar.gz
+Source0:     http://tarballs.openstack.org/%{pypi_name}/%{pypi_name}-%{upstream_version}.tar.gz
 
 BuildArch:   noarch
 %description
