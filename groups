@@ -1,5 +1,5 @@
-# UUID          Group Name
-6ddfecad023c6f4fa3ac8c4d2583c502ea675a73 	Non-Interactive Users
-84d74940bc766915fe1e434e769bf81f15693479       	debtcollector-distgit-core
-95e093eff545eb372664185f0f6f8b72a9185ffc        	debtcollector-distgit-ptl
-global:Registered-Users		Registered Users
+# UUID                                  	Group Name
+#
+84d74940bc766915fe1e434e769bf81f15693479	debtcollector-distgit-core
+95e093eff545eb372664185f0f6f8b72a9185ffc	openstack/debtcollector-distgit-ptl
+global:Registered-Users                 	Registered Users
