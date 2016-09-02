@@ -5,8 +5,8 @@
 %endif
 
 Name:        python-%{pypi_name}
-Version:     XXX
-Release:     XXX
+Version:     1.8.0
+Release:     1
 Summary:     A collection of Python deprecation patterns and strategies
 
 License:     ASL 2.0
@@ -126,3 +126,6 @@ rm -fr doc/build/html/.buildinfo
 %endif
 
 %changelog
+* Fri Sep 02 2016 Haikel Guemar <hguemar@fedoraproject.org> 1.8.0-
+- Update to 1.8.0
+
