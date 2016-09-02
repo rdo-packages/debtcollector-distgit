@@ -1,17 +1,19 @@
 %global pypi_name debtcollector
 
+%{!?upstream_version: %global upstream_version %{version}%{?milestone}}
+
 %if 0%{?fedora} >=24
 %global with_python3 1
 %endif
 
 Name:        python-%{pypi_name}
-Version:     XXX
-Release:     XXX
+Version:     1.8.0
+Release:     1
 Summary:     A collection of Python deprecation patterns and strategies
 
 License:     ASL 2.0
 URL:         https://pypi.python.org/pypi/%{pypi_name}
-Source0:     http://tarballs.openstack.org/%{pypi_name}/%{pypi_name}-master.tar.gz
+Source0:     http://tarballs.openstack.org/%{pypi_name}/%{pypi_name}-%{upstream_version}.tar.gz
 
 BuildArch:   noarch
 %description
@@ -126,3 +128,6 @@ rm -fr doc/build/html/.buildinfo
 %endif
 
 %changelog
+* Fri Sep 02 2016 Haikel Guemar <hguemar@fedoraproject.org> 1.8.0-
+- Update to 1.8.0
+
