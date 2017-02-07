@@ -33,6 +33,7 @@ BuildRequires: python-setuptools
 BuildRequires: python-pbr
 
 Requires:    python-babel
+Requires:    python-funcsigs
 Requires:    python-pbr
 Requires:    python-six
 Requires:    python-wrapt
@@ -66,6 +67,7 @@ BuildRequires: python3-setuptools
 BuildRequires: python3-pbr
 
 Requires:    python3-babel
+Requires:    python3-funcsigs
 Requires:    python3-pbr
 Requires:    python3-six
 Requires:    python3-wrapt
