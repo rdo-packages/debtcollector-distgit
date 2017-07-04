@@ -31,6 +31,7 @@ Summary:     A collection of Python deprecation patterns and strategies
 BuildRequires: python2-devel
 BuildRequires: python-setuptools
 BuildRequires: python-pbr
+BuildRequires: git
 
 Requires:    python-babel
 Requires:    python-funcsigs
@@ -51,7 +52,9 @@ It is a collection of functions/decorators which is used to signal a user when
 Summary:        Documentation for the debtcollector module
 
 BuildRequires:  python-sphinx
-BuildRequires:  python-oslo-sphinx
+BuildRequires:  python-openstackdocstheme
+BuildRequires:  python-wrapt
+BuildRequires:  python-fixtures
 BuildRequires:  python-six
 
 %description -n python-%{pypi_name}-doc
@@ -82,7 +85,7 @@ It is a collection of functions/decorators which is used to signal a user when
 %endif
 
 %prep
-%setup -q -n %{pypi_name}-%{upstream_version}
+%autosetup -n %{pypi_name}-%{upstream_version} -S git
 
 # let RPM handle deps
 rm -rf requirements.txt
@@ -91,10 +94,7 @@ rm -rf requirements.txt
 %py2_build
 
 # doc
-export PYTHONPATH="$( pwd ):$PYTHONPATH"
-pushd doc
-sphinx-build -b html -d build/doctrees   source build/html
-popd
+%{__python2} setup.py build_sphinx -b html
 # Fix hidden-file-or-dir warnings
 rm -fr doc/build/html/.buildinfo
 
