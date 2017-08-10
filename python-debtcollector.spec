@@ -7,8 +7,8 @@
 %endif
 
 Name:        python-%{pypi_name}
-Version:     XXX
-Release:     XXX
+Version:     1.17.0
+Release:     1%{?dist}
 Summary:     A collection of Python deprecation patterns and strategies
 
 License:     ASL 2.0
@@ -130,3 +130,6 @@ rm -fr doc/build/html/.buildinfo
 %endif
 
 %changelog
+* Thu Aug 10 2017 Alfredo Moralejo <amoralej@redhat.com> 1.17.0-1
+- Update to 1.17.0
+
