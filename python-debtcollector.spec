@@ -68,6 +68,7 @@ Summary:     A collection of Python deprecation patterns and strategies
 BuildRequires: python3-devel
 BuildRequires: python3-setuptools
 BuildRequires: python3-pbr
+BuildRequires: openstack-macros
 
 Requires:    python3-babel
 Requires:    python3-funcsigs
@@ -88,7 +89,7 @@ It is a collection of functions/decorators which is used to signal a user when
 %autosetup -n %{pypi_name}-%{upstream_version} -S git
 
 # let RPM handle deps
-rm -rf requirements.txt
+%py_req_cleanup
 
 %build
 %py2_build
