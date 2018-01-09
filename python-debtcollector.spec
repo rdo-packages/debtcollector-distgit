@@ -16,6 +16,10 @@ URL:         https://pypi.python.org/pypi/%{pypi_name}
 Source0:     https://tarballs.openstack.org/%{pypi_name}/%{pypi_name}-%{upstream_version}.tar.gz
 
 BuildArch:   noarch
+
+BuildRequires: git
+BuildRequires: openstack-macros
+
 %description
 It is a collection of functions/decorators which is used to signal a user when
 *  a method (static method, class method, or regular instance method) or a class
@@ -31,7 +35,6 @@ Summary:     A collection of Python deprecation patterns and strategies
 BuildRequires: python2-devel
 BuildRequires: python-setuptools
 BuildRequires: python-pbr
-BuildRequires: git
 
 Requires:    python-babel
 Requires:    python-funcsigs
@@ -68,7 +71,6 @@ Summary:     A collection of Python deprecation patterns and strategies
 BuildRequires: python3-devel
 BuildRequires: python3-setuptools
 BuildRequires: python3-pbr
-BuildRequires: openstack-macros
 
 Requires:    python3-babel
 Requires:    python3-funcsigs
