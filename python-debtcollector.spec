@@ -36,7 +36,6 @@ BuildRequires: python2-devel
 BuildRequires: python-setuptools
 BuildRequires: python-pbr
 
-Requires:    python-babel
 Requires:    python-funcsigs
 Requires:    python-pbr
 Requires:    python-six
@@ -72,7 +71,6 @@ BuildRequires: python3-devel
 BuildRequires: python3-setuptools
 BuildRequires: python3-pbr
 
-Requires:    python3-babel
 Requires:    python3-funcsigs
 Requires:    python3-pbr
 Requires:    python3-six
