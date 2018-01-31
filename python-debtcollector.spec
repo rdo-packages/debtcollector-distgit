@@ -33,14 +33,13 @@ Summary:     A collection of Python deprecation patterns and strategies
 %{?python_provide:%python_provide python2-%{pypi_name}}
 
 BuildRequires: python2-devel
-BuildRequires: python-setuptools
-BuildRequires: python-pbr
+BuildRequires: python2-setuptools
+BuildRequires: python2-pbr
 
-Requires:    python-babel
-Requires:    python-funcsigs
-Requires:    python-pbr
-Requires:    python-six
-Requires:    python-wrapt
+Requires:    python2-funcsigs
+Requires:    python2-pbr
+Requires:    python2-six
+Requires:    python2-wrapt
 
 
 %description -n python2-%{pypi_name}
@@ -54,11 +53,11 @@ It is a collection of functions/decorators which is used to signal a user when
 %package -n python-%{pypi_name}-doc
 Summary:        Documentation for the debtcollector module
 
-BuildRequires:  python-sphinx
-BuildRequires:  python-openstackdocstheme
-BuildRequires:  python-wrapt
-BuildRequires:  python-fixtures
-BuildRequires:  python-six
+BuildRequires:  python2-sphinx
+BuildRequires:  python2-openstackdocstheme
+BuildRequires:  python2-wrapt
+BuildRequires:  python2-fixtures
+BuildRequires:  python2-six
 
 %description -n python-%{pypi_name}-doc
 Documentation for the debtcollector module
@@ -72,7 +71,6 @@ BuildRequires: python3-devel
 BuildRequires: python3-setuptools
 BuildRequires: python3-pbr
 
-Requires:    python3-babel
 Requires:    python3-funcsigs
 Requires:    python3-pbr
 Requires:    python3-six
