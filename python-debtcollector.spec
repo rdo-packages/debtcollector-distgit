@@ -7,8 +7,8 @@
 %endif
 
 Name:        python-%{pypi_name}
-Version:     XXX
-Release:     XXX
+Version:     1.19.0
+Release:     1%{?dist}
 Summary:     A collection of Python deprecation patterns and strategies
 
 License:     ASL 2.0
@@ -139,3 +139,6 @@ rm -fr doc/build/html/.buildinfo
 %endif
 
 %changelog
+* Fri Feb 09 2018 RDO <dev@lists.rdoproject.org> 1.19.0-1
+- Update to 1.19.0
+
