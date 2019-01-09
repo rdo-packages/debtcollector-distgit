@@ -2,9 +2,11 @@
 
 %{!?upstream_version: %global upstream_version %{version}%{?milestone}}
 
-%if 0%{?fedora} >=24
+%if 0%{?fedora} >=24 || 0%{?rhel} > 7
 %global with_python3 1
 %endif
+
+%global with_doc 1
 
 Name:        python-%{pypi_name}
 Version:     XXX
@@ -39,7 +41,7 @@ BuildRequires: python2-pbr
 Requires:    python2-funcsigs
 Requires:    python2-pbr
 Requires:    python2-six
-%if 0%{?fedora} > 0
+%if 0%{?fedora} > 0 || 0%{?rhel} > 7
 Requires:    python2-wrapt
 %else
 Requires:    python-wrapt
@@ -54,6 +56,8 @@ It is a collection of functions/decorators which is used to signal a user when
 * a keyword is renamed
 * further customizing the emitted messages
 
+
+%if 0%{?with_doc}
 %package -n python-%{pypi_name}-doc
 Summary:        Documentation for the debtcollector module
 
@@ -61,7 +65,7 @@ BuildRequires:  python2-sphinx
 BuildRequires:  python2-openstackdocstheme
 BuildRequires:  python2-fixtures
 BuildRequires:  python2-six
-%if 0%{?fedora} > 0
+%if 0%{?fedora} > 0 || 0%{?rhel} > 7
 BuildRequires:  python2-wrapt
 %else
 BuildRequires:  python-wrapt
@@ -69,6 +73,8 @@ BuildRequires:  python-wrapt
 
 %description -n python-%{pypi_name}-doc
 Documentation for the debtcollector module
+%endif
+
 
 %if 0%{?with_python3}
 %package -n python3-%{pypi_name}
@@ -102,10 +108,12 @@ It is a collection of functions/decorators which is used to signal a user when
 %build
 %py2_build
 
+%if 0%{?with_doc}
 # doc
 %{__python2} setup.py build_sphinx -b html
 # Fix hidden-file-or-dir warnings
 rm -fr doc/build/html/.buildinfo
+%endif
 
 %if 0%{?with_python3}
 %py3_build
@@ -125,9 +133,11 @@ rm -fr doc/build/html/.buildinfo
 %{python2_sitelib}/%{pypi_name}*.egg-info
 %exclude %{python2_sitelib}/%{pypi_name}/tests
 
+%if 0%{?with_doc}
 %files -n python-%{pypi_name}-doc
 %doc doc/build/html
 %license LICENSE
+%endif
 
 %if 0%{?with_python3}
 %files -n python3-%{pypi_name}
