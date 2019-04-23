@@ -7,7 +7,7 @@
 %endif
 
 Name:        python-%{pypi_name}
-Version:     1.17.1
+Version:     1.17.2
 Release:     1%{?dist}
 Summary:     A collection of Python deprecation patterns and strategies
 
@@ -130,6 +130,9 @@ rm -fr doc/build/html/.buildinfo
 %endif
 
 %changelog
+* Tue Apr 23 2019 RDO <dev@lists.rdoproject.org> 1.17.2-1
+- Update to 1.17.2
+
 * Thu Sep 28 2017 rdo-trunk <javier.pena@redhat.com> 1.17.1-1
 - Update to 1.17.1
 
