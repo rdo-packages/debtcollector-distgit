@@ -104,3 +104,4 @@ rm -fr doc/build/html/.buildinfo
 %endif
 
 %changelog
+# REMOVEME: error caused by commit http://git.openstack.org/cgit/openstack/debtcollector/commit/?id=3e241f33da72a3a5139a37545e6b8ab6a82bccdf
