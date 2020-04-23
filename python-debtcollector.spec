@@ -12,8 +12,8 @@ It is a collection of functions/decorators which is used to signal a user when \
 * further customizing the emitted messages
 
 Name:        python-%{pypi_name}
-Version:     XXX
-Release:     XXX
+Version:     2.0.1
+Release:     1%{?dist}
 Summary:     A collection of Python deprecation patterns and strategies
 
 License:     ASL 2.0
@@ -93,3 +93,6 @@ rm -fr doc/build/html/.{doctrees,buildinfo}
 %endif
 
 %changelog
+* Thu Apr 23 2020 RDO <dev@lists.rdoproject.org> 2.0.1-1
+- Update to 2.0.1
+
