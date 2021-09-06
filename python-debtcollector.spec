@@ -1,5 +1,5 @@
 %{!?sources_gpg: %{!?dlrn:%global sources_gpg 1} }
-%global sources_gpg_sign 0x2426b928085a020d8a90d0d879ab7008d0896c8a
+%global sources_gpg_sign 0x4c29ff0e437f3351fd82bdf47c5a3bc787dc7035
 
 %{!?upstream_version: %global upstream_version %{version}%{?milestone}}
 
@@ -14,8 +14,8 @@ It is a collection of functions/decorators which is used to signal a user when \
 * further customizing the emitted messages
 
 Name:        python-%{pypi_name}
-Version:     XXX
-Release:     XXX
+Version:     2.3.0
+Release:     1%{?dist}
 Summary:     A collection of Python deprecation patterns and strategies
 
 License:     ASL 2.0
@@ -108,3 +108,6 @@ rm -fr doc/build/html/.{doctrees,buildinfo}
 %endif
 
 %changelog
+* Mon Sep 06 2021 RDO <dev@lists.rdoproject.org> 2.3.0-1
+- Update to 2.3.0
+
