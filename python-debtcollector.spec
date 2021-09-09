@@ -15,7 +15,7 @@ It is a collection of functions/decorators which is used to signal a user when \
 
 Name:        python-%{pypi_name}
 Version:     2.3.0
-Release:     1%{?dist}
+Release:     2%{?dist}
 Summary:     A collection of Python deprecation patterns and strategies
 
 License:     ASL 2.0
@@ -51,6 +51,9 @@ BuildRequires: python3-pbr
 Requires:    python3-pbr
 Requires:    python3-six
 Requires:    python3-wrapt
+%if 0%{?rhel} == 8
+Requires:    python3-importlib-metadata
+%endif
 
 %description -n python3-%{pypi_name}
 %{common_desc}
@@ -108,6 +111,9 @@ rm -fr doc/build/html/.{doctrees,buildinfo}
 %endif
 
 %changelog
+* Thu Sep 09 2021 Joel Capitao <jcapitao@redhat.com> 2.3.0-2
+- Add importlib-metadata as requirement for CentOS 8
+
 * Mon Sep 06 2021 RDO <dev@lists.rdoproject.org> 2.3.0-1
 - Update to 2.3.0
 
