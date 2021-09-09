@@ -51,6 +51,9 @@ BuildRequires: python3-pbr
 Requires:    python3-pbr
 Requires:    python3-six
 Requires:    python3-wrapt
+%if 0%{?rhel} == 8
+Requires:    python3-importlib-metadata
+%endif
 
 %description -n python3-%{pypi_name}
 %{common_desc}
