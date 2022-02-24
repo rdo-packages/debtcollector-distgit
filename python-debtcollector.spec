@@ -46,13 +46,10 @@ Summary:     A collection of Python deprecation patterns and strategies
 
 BuildRequires: python3-devel
 BuildRequires: python3-setuptools
-BuildRequires: python3-pbr
 
-Requires:    python3-pbr
-Requires:    python3-six
 Requires:    python3-wrapt
 %if 0%{?rhel} == 8
-Requires:    python3-importlib-metadata
+Requires:    python3-importlib-metadata >= 1.7.0
 %endif
 
 %description -n python3-%{pypi_name}
@@ -66,7 +63,6 @@ Summary:        Documentation for the debtcollector module
 BuildRequires:  python3-sphinx
 BuildRequires:  python3-openstackdocstheme
 BuildRequires:  python3-fixtures
-BuildRequires:  python3-six
 BuildRequires:  python3-wrapt
 
 %description -n python-%{pypi_name}-doc
