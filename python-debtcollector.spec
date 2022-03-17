@@ -14,7 +14,7 @@ It is a collection of functions/decorators which is used to signal a user when \
 * further customizing the emitted messages
 
 Name:        python-%{pypi_name}
-Version:     2.4.0
+Version:     2.5.0
 Release:     1%{?dist}
 Summary:     A collection of Python deprecation patterns and strategies
 
@@ -107,6 +107,9 @@ rm -fr doc/build/html/.{doctrees,buildinfo}
 %endif
 
 %changelog
+* Thu Mar 17 2022 RDO <dev@lists.rdoproject.org> 2.5.0-1
+- Update to 2.5.0
+
 * Thu Mar 10 2022 RDO <dev@lists.rdoproject.org> 2.4.0-1
 - Update to 2.4.0
 
