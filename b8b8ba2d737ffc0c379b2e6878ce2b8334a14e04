@@ -16,6 +16,24 @@
       "message": "we already have 2.5.0 in Yoga release, so we need to cross-tag it",
       "revId": "b8b8ba2d737ffc0c379b2e6878ce2b8334a14e04",
       "serverId": "270e2033-b340-4cff-9539-693957ebf0e7"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "fb89a8fd_3eb84568",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 757
+      },
+      "writtenOn": "2022-09-09T10:00:41Z",
+      "side": 1,
+      "message": "cross-tag done",
+      "parentUuid": "5153b096_4dc3c45f",
+      "revId": "b8b8ba2d737ffc0c379b2e6878ce2b8334a14e04",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7"
     }
   ]
 }
