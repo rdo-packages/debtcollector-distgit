@@ -45,6 +45,7 @@ Summary:     A collection of Python deprecation patterns and strategies
 %{?python_provide:%python_provide python3-%{pypi_name}}
 
 BuildRequires: python3-devel
+BuildRequires: python3-pbr
 BuildRequires: python3-setuptools
 
 Requires:    python3-wrapt
